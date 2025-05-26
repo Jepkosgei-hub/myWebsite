@@ -1,0 +1,132 @@
+
+<style>
+  h2 {
+    color: #005f73;
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .rooms-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  .room-card {
+    background-color: #d0f0fd;
+    border-radius: 12px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.15);
+    width: 340px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+  }
+  .room-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 4px 6px 20px rgba(0,0,0,0.3);
+  }
+  /* Container for two images */
+  .room-images {
+    display: flex;
+    gap: 6px;
+    border-bottom: 4px solid #0a9396;
+  }
+  .room-image {
+    width: 50%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 0;
+  }
+  .room-content {
+    padding: 18px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .room-title {
+    font-size: 1.9rem;
+    color: #003845;
+    margin: 0 0 8px 0;
+  }
+  .room-price {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #0a9396;
+    margin-bottom: 12px;
+  }
+  .room-description {
+    color: #333;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    flex-grow: 1;
+  }
+  @media (max-width: 700px) {
+    .rooms-list {
+      flex-direction: column;
+      align-items: center;
+    }
+    .room-card {
+      width: 90%;
+      max-width: 400px;
+    }
+    .room-images {
+      flex-direction: column;
+    }
+    .room-image {
+      width: 100%;
+      height: 220px;
+    }
+  }
+</style>
+<h2>Rooms & Rates</h2>
+
+<div class="rooms-list">
+  <!-- Standard Room -->
+  <div class="room-card">
+    <div class="room-images">
+      <img src="https://images.unsplash.com/photo-1501117716987-c8e9a8eb39b0?auto=format&fit=crop&w=800&q=80" alt="Standard Room 1" class="room-image">
+      <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80" alt="Standard Room 2" class="room-image">
+    </div>
+    <div class="room-content">
+      <h3 class="room-title">Standard Room</h3>
+      <p class="room-price">$100 / night</p>
+      <p class="room-description">
+        Cozy and comfortable room with all the essentials for a pleasant stay. Perfect for solo travelers and couples.
+      </p>
+    </div>
+  </div>
+  <!-- Deluxe Room -->
+  <div class="room-card">
+    <div class="room-images">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Deluxe Room 1" class="room-image">
+      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="Deluxe Room 2" class="room-image">
+    </div>
+    <div class="room-content">
+      <h3 class="room-title">Deluxe Room</h3>
+      <p class="room-price">$150 / night</p>
+      <p class="room-description">
+        Spacious room with upgraded amenities and a beautiful view of the garden. Ideal for families and small groups.
+      </p>
+    </div>
+  </div>
+  <!-- Ocean View Suite -->
+  <div class="room-card">
+    <div class="room-images">
+      <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80" alt="Ocean View Suite 1" class="room-image">
+      <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Ocean View Suite 2" class="room-image">
+    </div>
+    <div class="room-content">
+      <h3 class="room-title">Ocean View Suite</h3>
+      <p class="room-price">$250 / night</p>
+      <p class="room-description">
+        Luxurious suite offering breathtaking ocean views, premium furnishings, and private balcony. Best choice for special occasions.
+      </p>
+    </div>
+  </div>
+</div>
+

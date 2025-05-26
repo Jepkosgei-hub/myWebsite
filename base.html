@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Voyager Beach Resort</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Voyager Beach Resort - Your ultimate beach getaway in Mombasa offering luxury rooms, stunning views, and delicious food." />
+  <style>
+    /* --- base styles here --- */
+
+    /* Reset & basics */
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7fb;
+      color: #333;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    header p {
+      font-style: italic;
+      opacity: 0.9;
+      font-size: 1.2rem;
+    }
+    nav {
+      background-color: #0066cc;
+      display: flex;
+      justify-content: center;
+      padding: 0.75rem 0;
+      box-shadow: inset 0 -3px 5px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      margin: 0 1.2rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.3rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #fcbf49;
+      color: #004080;
+      outline: none;
+    }
+    nav a[aria-current="page"] {
+      background-color: #fcbf49;
+      color: #004080;
+      cursor: default;
+      pointer-events: none;
+    }
+    main {
+      flex-grow: 1;
+      max-width: 960px;
+      margin: 2rem auto;
+      background-color: white;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      text-align: center;
+    }
+    main h2 {
+      color: #0059b3;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    main p.lead {
+      font-size: 1.25rem;
+      color: #333;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #0066cc;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .btn:hover,
+    .btn:focus {
+      background-color: #004080;
+      outline: none;
+    }
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 1rem 1rem;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+      box-shadow: inset 0 3px 5px rgba(0,0,0,0.1);
+    }
+
+    /* --- Gallery CSS --- */
+    .gallery-section {
+      max-width: 700px;
+      margin: 40px auto 0;
+      text-align: center;
+    }
+    .gallery-title {
+      font-size: 1.8rem;
+      color: #0a9396;
+      margin-bottom: 15px;
+    }
+    .slider {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin-bottom: 15px;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .active-slide {
+      display: block;
+    }
+    .caption {
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+      color: white;
+      font-size: 1.1rem;
+      background: rgba(0,0,0,0.4);
+      padding: 6px 10px;
+      border-radius: 5px;
+    }
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .dot {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      margin: 5px 7px;
+      background-color: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .dot.active {
+      background-color: #005f73;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        margin: 0.5rem 0;
+      }
+      main {
+        padding: 1rem 1.5rem;
+        margin: 1rem 1rem 2rem;
+      }
+      main h2 {
+        font-size: 2rem;
+      }
+      main p.lead {
+        font-size: 1.1rem;
+      }
+      .btn {
+        font-size: 1rem;
+        padding: 0.65rem 1.2rem;
+      }
+      .slide {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Voyager Beach Resort</h1>
+    <p>Your ultimate beach getaway in Mombasa</p>
+  </header>
+
+  <nav>
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="payment.html"> payment</a>
+  </nav>
+
+  <main>
+    <h2>Welcome to Voyager Beach Resort</h2>
+    <p class="lead">
+      Experience the best of coastal luxury and relaxation at Voyager Beach Resort. From stunning ocean views and exquisite dining to comfortable rooms and warm hospitality — your perfect getaway starts here.
+    </p>
+    <a href="rooms.html" class="btn" aria-label="Explore Our Rooms">Explore Our Rooms</a>
+
+    <!-- Gallery Section added inside main -->
+    <section class="gallery-section">
+      <h3 class="gallery-title">Gallery Highlights</h3>
+      <div id="homeGallery" class="slider" style="position:relative;">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Sunset Beach" class="slide active-slide" />
+        <div class="caption">Sunset at Voyager Beach</div>
+
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Seafood Platter" class="slide" />
+        <div class="caption">Fresh seafood platter</div>
+
+        <img src="https://images.unsplash.com/photo-1501117716987-c8e9a8eb39b0?auto=format&fit=crop&w=800&q=80" alt="Standard Room" class="slide" />
+        <div class="caption">Cozy Standard Room</div>
+      </div>
+      <div class="dots" data-dots-for="homeGallery">
+        <span class="dot active" onclick="currentSlide('homeGallery',1)"></span>
+        <span class="dot" onclick="currentSlide('homeGallery',2)"></span>
+        <span class="dot" onclick="currentSlide('homeGallery',3)"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Voyager Beach Resort. All rights reserved.
+  </footer>
+
+  <script>
+    // Keep track of slide indexes for sliders by id
+    const slideIndexes = {};
+
+    function showSlides(sliderId) {
+      const slider = document.getElementById(sliderId);
+      if (!slider) return;
+
+      const slides = slider.querySelectorAll('.slide');
+      const dots = document.querySelectorAll(`.dots[data-dots-for='${sliderId}'] .dot`);
+
+      if (!(sliderId in slideIndexes)) {
+        slideIndexes[sliderId] = 0;
+      }
+
+      slides.forEach(slide => slide.classList.remove('active-slide'));
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      slideIndexes[sliderId]++;
+      if (slideIndexes[sliderId] > slides.length) {
+        slideIndexes[sliderId] = 1;
+      }
+
+      slides[slideIndexes[sliderId] - 1].classList.add('active-slide');
+      dots[slideIndexes[sliderId] - 1].classList.add('active');
+
+      setTimeout(() => showSlides(sliderId), 4000);
+    }
+
+    function currentSlide(sliderId, n) {
+      slideIndexes[sliderId] = n - 1;
+      showSlides(sliderId);
+    }
+
+    window.onload = () => {
+      showSlides('homeGallery');
+    };
+  </script>
+
+</body>
+</html>

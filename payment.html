@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Voyager Beach Resort</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+        }
+
+        header {
+            background-color: #006994;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        nav {
+            background: #004d66;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #0077aa;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #006994;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 15px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #006994;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #004d66;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Voyager Beach Resort</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="room.html">Room</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="payment.html">Payment</a>
+</nav>
+
+<div class="container">
+    <h2>Make a Payment</h2>
+    <form action="process_payment.php" method="POST">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="amount">Amount (KES)</label>
+        <input type="number" id="amount" name="amount" required>
+
+        <label for="method">Payment Method</label>
+        <select id="method" name="method" required>
+            <option value="">--Select Payment Method--</option>
+            <option value="mpesa">M-Pesa</option>
+            <option value="visa">VISA</option>
+            <option value="equity">Equity Bank</option>
+        </select>
+
+        <!-- M-Pesa Phone Input -->
+        <label for="phone">Phone Number (for M-Pesa)</label>
+        <input type="text" id="phone" name="phone" placeholder="07XXXXXXXX" required>
+
+        <input type="submit" value="Submit Payment">
+    </form>
+</div>
+
+</body>
+</html>
